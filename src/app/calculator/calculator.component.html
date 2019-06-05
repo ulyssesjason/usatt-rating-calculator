@@ -1,0 +1,38 @@
+<h3>USATT single tournament calculator</h3>
+
+<div>
+  Name:<input [(ngModel)]="player.name" placeholder="name"/>
+  Initial Rating:<input type="number" [(ngModel)]="player.initialRating" (change)="ratingUtil.updatePlayer(player)"
+                        placeholder=1000/>
+  <br><br>
+  <select [(ngModel)]="newResult.type">
+    <option *ngFor="let type of resultTypes" [value]="type">{{type}}</option>
+  </select> over Opponent Players of Rating:
+  <input type="number" [(ngModel)]="newResult.opponentRating" placeholder=1000 (keyup.enter)="addResult(newResult)"/>
+  <button (click)="addResult(newResult)">add</button>
+
+</div>
+
+<br><br>
+
+<div>
+  <ul>
+    <li *ngFor="let result of player.results">
+      {{result.type}} over player of {{result.opponentRating}}
+      rating exchange: {{result.rateDelta}}
+      <button (click)="remove(result)">remove</button>
+    </li>
+  </ul>
+</div>
+
+
+<div>
+  <span>{{player.name}} 's Results:</span><br>
+  <span>Initial Rating: {{player.initialRating}}</span><br>
+  <span>Adjusted Rating: {{player.adjustedRating}}</span><br>
+  <span>Final Rating: {{player.finalRating}}</span><br>
+</div>
+
+
+
+
