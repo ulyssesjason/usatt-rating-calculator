@@ -8,5 +8,5 @@ Rule Based on ELO Rule of [USATT Rating System Explanation](https://www.teamusa.
 
 ## Demo
 
-[Rating Calculator](www.ulyssesjason.com/usatt_rating_calculator)
+[Rating Calculator](https://www.ulyssesjason.com/usatt_rating_calculator)
 
